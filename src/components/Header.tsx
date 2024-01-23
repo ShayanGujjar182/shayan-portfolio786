@@ -3,12 +3,17 @@ import React from 'react'
 import { SocialIcon } from 'react-social-icons'
 import { motion } from "framer-motion"
 import Link from 'next/link'
+import { Social } from '../../typings'
+type Props = {
+  Socials : Social[]
+}
 
 
-function Header() {
+async function Header({Socials} : Props) {
+  
   return (
-    <header className='sticky p-5 top-0 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center'>
-        <motion.div
+    <header className='sticky xs:p-1 lg:p-5 top-0 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center'>
+         <motion.div
         initial={{
           x: -500,
           opacity: 0,
@@ -23,22 +28,17 @@ function Header() {
           duration : 0.7,
         }}
          className='flex flex-row items-center'>
-        <SocialIcon 
-        url="https://youtube.com" 
-        fgColor='gray'
-        bgColor='transparent'
-        
+          {
+            Socials?.map((social)=>(
+              <SocialIcon
+              key={social._id} 
+                url={social.url} 
+                fgColor='gray'
+                bgColor='transparent'
+                className='w-10'
         />    
-        <SocialIcon 
-        url="https://youtube.com" 
-        fgColor='gray'
-        bgColor='transparent'
-        />    
-        <SocialIcon 
-        url="https://youtube.com" 
-        fgColor='gray'
-        bgColor='transparent'
-        />    
+            ))
+            }
         </motion.div>
         
         <motion.span
@@ -54,7 +54,7 @@ function Header() {
         }}
         transition={{duration : 1.5}}
         className='flex flex-row items-center text-gray-300 cursor-pointer'>
-   
+
         <SocialIcon 
         className='cursor-pointer' 
         network="email"

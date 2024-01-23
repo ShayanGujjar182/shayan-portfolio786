@@ -28,11 +28,11 @@ body {
 
 @layer components{
   .heroButton{
-    @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40
+    @apply xs:px-3 lg:px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-main_color/40 hover:text-main_color/40
   }
 
   .contactInput{
-    @apply outline-none bg-slate-400/10 rounded-md border-b px-3 md:px-6 py-4 w-full border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40
+    @apply outline-none bg-slate-400/10 rounded-md border-b px-2  md:px-4 py-1 md:py-3 w-full border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-main_color/40 focus:text-main_color/40 hover:border-main_color/40
   }
 
   h3{
